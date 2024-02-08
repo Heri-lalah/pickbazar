@@ -9,6 +9,30 @@ const Footer = () => {
   return (
     <div className="flex w-full flex-col border-gray-800 bg-white px-5 md:px-10 lg:border-b-8 lg:px-[50px] xl:px-16">
       {/* Top */}
+
+      <div className="grid w-full grid-cols-3 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
+
+        {
+          siteSettings.footer.time_slot.day.map((day) => (
+            <div key={day} className="flex flex-col">
+              <h3 className="mt-3 mb-4 font-semibold text-primary lg:mb-7">
+                {day}
+              </h3>
+              <div className="space-y-3">
+                {
+                  day !== 'Dimanche' ? (
+                    <div>
+                      <p>Test</p>
+                      <p>Ouvert</p>
+                    </div>
+                  ): (<p>Ferme</p>)
+                }
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
       <div className="grid w-full grid-cols-3 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
         <div className="flex flex-col">
           <div className="mb-[2px] flex h-16 items-start">

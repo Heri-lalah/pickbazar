@@ -109,6 +109,11 @@ export const siteSettings = {
     address: '2429 River Drive, Suite 35 Cottonhall, CA 2296 United Kingdom',
     email: 'dummy@dummy.com',
     phone: '+1 256-698-0694',
+    time_slot :
+      {
+        day : ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+        time: '09H - 18H',
+      },
     menus: [
       {
         title: 'Informations légales',
