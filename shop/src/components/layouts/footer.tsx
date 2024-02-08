@@ -15,20 +15,20 @@ const Footer = () => {
             <Logo />
           </div>
 
-          <address className="mb-7 text-sm not-italic text-heading">
+          <address className="mb-7 text-sm not-italic text-primary">
             {t(siteSettings.footer.address)}
           </address>
-          <span className="mb-1 text-sm text-heading">
+          <span className="mb-1 text-sm text-primary">
             {t(siteSettings.footer.email)}
           </span>
-          <span className="text-sm text-heading">
+          <span className="text-sm text-primary">
             {t(siteSettings.footer.phone)}
           </span>
         </div>
 
         {siteSettings.footer.menus.map((menu, idx) => (
           <div className="flex flex-col" key={`${menu.title}-${idx}`}>
-            <h3 className="mt-3 mb-4 font-semibold text-heading lg:mb-7">
+            <h3 className="mt-3 mb-4 font-semibold text-primary lg:mb-7">
               {t(menu.title)}
             </h3>
 
@@ -37,7 +37,7 @@ const Footer = () => {
                 <li key={`${link.href}-${index}`}>
                   <Link
                     href={link.href}
-                    className="text-sm text-heading transition-colors hover:text-orange-500"
+                    className="text-sm text-primary transition-colors hover:text-orange-500"
                   >
                     {t(link.name)}
                   </Link>
