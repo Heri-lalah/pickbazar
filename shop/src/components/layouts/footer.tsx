@@ -3,6 +3,7 @@ import { siteSettings } from '@/config/site';
 import Link from '@/components/ui/link';
 import Logo from '@/components/ui/logo';
 import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
+import { CloseIcon } from '../icons/close-icon';
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -10,22 +11,25 @@ const Footer = () => {
     <div className="flex w-full flex-col border-gray-800 bg-white px-5 md:px-10 lg:border-b-8 lg:px-[50px] xl:px-16">
       {/* Top */}
 
-      <div className="grid w-full grid-cols-3 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
-
+      <div className="grid w-full grid-cols-5 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-5 xl:grid-cols-7 2xl:grid-cols-7">
         {
           siteSettings.footer.time_slot.day.map((day) => (
-            <div key={day} className="flex flex-col">
-              <h3 className="mt-3 mb-4 font-semibold text-primary lg:mb-7">
+            <div key={day} className="border-2 flex flex-col text-center">
+              <h3 className="mt-3 mb-1 font-semibold text-primary">
                 {day}
               </h3>
-              <div className="space-y-3">
+              <div>
                 {
                   day !== 'Dimanche' ? (
                     <div>
-                      <p>Test</p>
+                      <p>{siteSettings.footer.time_slot.time}</p>
                       <p>Ouvert</p>
                     </div>
-                  ): (<p>Ferme</p>)
+                  ): (
+                    <p className='text-red-500 flex justify-center gap-2'>
+                      <CloseIcon width={15}></CloseIcon>
+                      <span>Fermé</span>
+                    </p>)
                 }
               </div>
             </div>
