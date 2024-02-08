@@ -26,7 +26,7 @@ const ShopsPage: NextPageWithLayout = () => {
     lat: query?.lat?.toString() as string,
     lng: query?.lng?.toString() as string,
   });
-  
+
   if (error) return <ErrorMessage message={error.message} />;
   if (!isLoading && !shops.length) {
     return (

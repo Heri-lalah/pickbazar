@@ -24,7 +24,9 @@ export default function SiteLayout({ children }: React.PropsWithChildren<{}>) {
         <Header layout={layout} />
       )}
       {children}
-      {['compact'].includes(layout) && <Footer />}
+      <p>Testtstteste</p>
+      {['default'].includes(layout) && <Footer />}
+      {['compact', 'default'].includes(layout) && <Footer />}
       <MobileNavigation />
     </div>
   );

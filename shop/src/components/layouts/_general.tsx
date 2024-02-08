@@ -1,3 +1,4 @@
+import Footer from './footer';
 import Header from './header';
 import dynamic from 'next/dynamic';
 
