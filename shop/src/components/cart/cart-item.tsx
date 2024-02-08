@@ -7,6 +7,11 @@ import { fadeInOut } from '@/lib/motion/fade-in-out';
 import usePrice from '@/lib/use-price';
 import { useTranslation } from 'next-i18next';
 import { useCart } from '@/store/quick-cart/cart.context';
+import { useModalAction } from '@/components/ui/modal/modal.context';
+import { useRouter } from 'next/router';
+import { Routes } from '@/config/routes';
+import { useAtom } from 'jotai';
+import { drawerAtom } from '@/store/drawer-atom';
 
 interface CartItemProps {
   item: any;
@@ -22,6 +27,17 @@ const CartItem = ({ item }: CartItemProps) => {
     updateCartLanguage,
     language,
   } = useCart();
+
+
+  const router = useRouter();
+  const { closeModal } = useModalAction();
+  const [_, closeSidebar] = useAtom(drawerAtom);
+  const navigate = (path: string) => {
+    router.push(path);
+    closeModal();
+    closeSidebar({ display: false, view: '' });
+  };
+
 
   const { price } = usePrice({
     amount: item.price,
@@ -70,7 +86,7 @@ const CartItem = ({ item }: CartItemProps) => {
           className="object-contain"
         />
       </div>
-      <div>
+      <div className='cursor-pointer transition-colors hover:text-accent' onClick={() => navigate(Routes.product(item.slug))}>
         {/* <h3 className="font-bold text-heading">{item.name}</h3> */}
         <h3 className="font-bold text-heading">{item.name} </h3>
         <p className="my-2.5 font-semibold text-accent">{price}</p>
