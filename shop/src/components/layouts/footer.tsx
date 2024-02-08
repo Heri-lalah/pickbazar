@@ -37,7 +37,7 @@ const Footer = () => {
         }
       </div>
 
-      <div className="grid w-full grid-cols-3 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
+      <div className="grid w-full grid-cols-1 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
         <div className="flex flex-col">
           <div className="mb-[2px] flex h-16 items-start">
             <Logo />
@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="order-1 mb-5 flex items-center space-x-5 rtl:space-x-reverse lg:order-2 lg:mb-0">
             {siteSettings.footer.payment_methods.map((method, idx) => (
               <Link
-                className="relative flex h-5 w-auto items-center overflow-hidden"
+                className="relative flex h-5 items-center overflow-hidden"
                 key={`${method.url}-${idx}`}
                 href={method.url}
               >

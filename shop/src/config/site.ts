@@ -6,7 +6,7 @@ export const siteSettings = {
   description: '',
   logo: {
     url: '/logo.svg',
-    alt: 'PickBazar',
+    alt: 'Swith-gaming',
     href: '/grocery',
     width: 128,
     height: 40,
