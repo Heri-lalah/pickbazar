@@ -4,7 +4,6 @@ import Link from '@/components/ui/link';
 import Logo from '@/components/ui/logo';
 import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
 import { CloseIcon } from '../icons/close-icon';
-import Email from 'next-auth/providers/email';
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -40,11 +39,11 @@ const Footer = () => {
 
       <div className="grid w-full grid-cols-1 gap-4 pt-3 md:grid-cols-3 lg:pt-3 lg:pb-16 xl:grid-cols-5 xl:gap-8 2xl:grid-cols-6">
         <div className="flex flex-col">
-          <div className="mb-[2px] flex h-16 items-start">
-            <Logo />
+          <div className="mt-1 mb-4 flex items-start">
+            <Logo/>
           </div>
 
-          <ul className="space-y-2">
+          <ul className="space-y-2 mt-2">
             <li className='text-sm not-italic text-primary'>
               <address className='not-italic'>
                 <span className='mr-1'>Adresse :</span>
