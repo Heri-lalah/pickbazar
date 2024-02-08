@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { Icons } from 'react-toastify';
 
 const payementMethod = [
-    'visa copie.jpeg',
-    'master-card copie.jpeg',
+    'visa.jpeg',
+    'master-card.jpeg',
     'maestro.jpeg',
     'american-express.jpeg',
     'cb.jpeg',
@@ -23,14 +23,14 @@ const CartPayement = () => {
      const { t } = useTranslation('common');
     return (
         <div>
-            <p className="text-center">{t('text-payement-method')}</p>
-            <div className='my-1 flex justify-center'>
+            <p className="text-center text-xs text-primary">{t('text-payement-method')}</p>
+            <div className='mb-1 flex justify-center'>
                 {
                     payementMethod.map(icon =>(
                         <Image
                         className='px-0.5'
-                        key={icon} src={"/icons/" + icon}
-                        alt={'icon-' + icon.split('.')[0]}
+                        key={icon} src={"/payment/" + icon}
+                        alt={'payment-img-' + icon.split('.')[0]}
                         width={50}
                         height={30}
                         />
@@ -39,12 +39,13 @@ const CartPayement = () => {
             </div>
 
             <div className='my-2'>
-                <p className="text-center">{t('text-security-certificate')}</p>
-                <div className='mt-1 mb-2 flex justify-center'>
+                <p className="text-center text-xs text-primary">{t('text-security-certificate')}</p>
+                <div className='mb-2 flex justify-center'>
                     {
                         securityCertificate.map(icon =>(
                         <img
-                        src={"/icons/" + icon}
+                        src={"/security_certificate/" + icon}
+                        alt={'security_certificate-img-' + icon.split('.')[0]}
                         className='max-h-9'
                         />
                         // <Image
