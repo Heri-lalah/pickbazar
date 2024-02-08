@@ -113,6 +113,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
               )}
             </>
           )}
+
           {Number(quantity) <= 0 && (
             <div className="rounded bg-red-500 px-2 py-1 text-xs text-light">
               {t('text-out-stock')}

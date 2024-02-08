@@ -43,7 +43,6 @@ export default function BestSellingProductsGrid({
                 <ProductCard product={product} key={product?.id} />
               ))}
         </div>
-        d
       </div>
     </SectionBlock>
   );

@@ -1,8 +1,8 @@
 {
   "name": "PickBazar E-Commerce",
   "short_name": "PickBazar",
-  "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "theme_color": "#1f2768",
+  "background_color": "#1f2768",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",

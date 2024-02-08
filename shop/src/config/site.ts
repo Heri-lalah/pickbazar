@@ -16,13 +16,13 @@ export const siteSettings = {
   product: {
     placeholderImage: '/product-placeholder.svg',
     cardMaps: {
-      grocery: 'Krypton',
-      furniture: 'Radon',
-      bag: 'Oganesson',
+      grocery: 'Neon',
+      furniture: 'Neon',
+      bag: 'Neon',
       makeup: 'Neon',
-      book: 'Xenon',
-      medicine: 'Helium',
-      default: 'Argon',
+      book: 'Neon',
+      medicine: 'Neon',
+      default: 'Neon',
     },
   },
   authorizedLinks: [
