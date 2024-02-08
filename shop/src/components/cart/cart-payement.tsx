@@ -40,15 +40,20 @@ const CartPayement = () => {
 
             <div className='my-2'>
                 <p className="text-center">{t('text-security-certificate')}</p>
-                <div className='my-1 flex justify-center'>
+                <div className='mt-1 mb-2 flex justify-center'>
                     {
                         securityCertificate.map(icon =>(
-                        <Image
-                        className='px-0.5'
-                        key={icon} src={"/icons/" + icon}
-                        alt={'icon-' + icon.split('.')[0]}
-                        width={70}
-                        height={30}/>
+                        <img
+                        src={"/icons/" + icon}
+                        className='max-h-9'
+                        />
+                        // <Image
+                        // key={icon}
+                        // src={"/icons/" + icon}
+                        // alt={'icon-' + icon.split('.')[0]}
+                        // width={50}
+                        // height={0}
+                        // />
                         ))
                     }
                 </div>
