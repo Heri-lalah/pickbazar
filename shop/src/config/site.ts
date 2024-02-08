@@ -111,92 +111,84 @@ export const siteSettings = {
     phone: '+1 256-698-0694',
     menus: [
       {
-        title: 'text-explore',
+        title: 'Informations légales',
         links: [
           {
-            name: 'text-about-us',
+            name : "Mentions légales",
             href: '/',
           },
           {
-            name: 'text-sitemap',
+            name : "Conditions générales d’utilisation (CGU)",
             href: '/',
           },
           {
-            name: 'text-bookmarks',
+            name : "Conditions générales de vente (CGV)",
             href: '/',
           },
           {
-            name: 'text-sign-join',
+            name : "Politique de confidentialité",
             href: '/',
           },
+          {
+            name : "Politique de garantie",
+            href: '/',
+          },
+          {
+            name : "Politique de Propriété Intellectuelle",
+            href: '/',
+          }
         ],
       },
       {
-        title: 'text-customer-service',
+        title: 'Informations Commerciales',
         links: [
-          {
-            name: 'text-faq-help',
-            href: Routes.help,
-          },
-          {
-            name: 'text-returns',
-            href: '/',
-          },
-          {
-            name: 'text-accessibility',
-            href: '/',
-          },
-          {
-            name: 'text-contact-us',
-            href: Routes.contactUs,
-          },
-          {
-            name: 'text-store-pickup',
-            href: '/',
-          },
+          {name: "Politique de livraison", href: "/"},
+          {name: "Politique de retour", href: "/"},
+          {name: "Modalités de remboursement", href: "/"},
+          {name: "Modes de paiement", href: "/"},
+          {name: "Conditions de facturation", href: "/"},
+          {name: "Programme de fidélité", href: "/"}
         ],
       },
       {
-        title: 'text-our-information',
+        title: 'Service Clients',
         links: [
-          {
-            name: 'text-privacy-update',
-            href: Routes.privacy,
-          },
-          {
-            name: 'text-terms-condition',
-            href: Routes.terms,
-          },
-          {
-            name: 'text-return-policy',
-            href: '/',
-          },
-          {
-            name: 'text-sitemap',
-            href: '/',
-          },
+          {name: "Centre d'aide", href: "/"},
+          {name: "Paiements sécurisés ", href: "/"},
+          {name: "Contact", href: "/"},
+          {name: "Bricole+ ", href: "/"},
+          {name : "Demande de réparation ", href: "/"},
         ],
       },
+      {
+        title : "Qui nous sommes ?",
+        links : [
+          {name: "À propos de nous", href: "/"},
+          {name: "Emploi", href: "/"},
+          {name: "Blog", href: "/"},
+         	{name: "Presse", href: "/"},
+        ],
+      }
     ],
     payment_methods: [
       {
-        img: '/payment/master.png',
+        img: '/payment/visa.jpeg',
         url: '/',
       },
       {
-        img: '/payment/skrill.png',
+        img: '/payment/master-card.jpeg',
         url: '/',
       },
       {
-        img: '/payment/paypal.png',
+        img: '/payment/maestro.jpeg',
         url: '/',
       },
       {
-        img: '/payment/visa.png',
+        img: '/payment/american-express.jpeg',
         url: '/',
       },
       {
-        img: '/payment/discover.png',
+        img: '/payment/cb.jpeg',
         url: '/',
       },
     ],
