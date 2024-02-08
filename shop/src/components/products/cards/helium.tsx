@@ -6,6 +6,9 @@ import { useTranslation } from 'next-i18next';
 import { useModalAction } from '@/components/ui/modal/modal.context';
 import { productPlaceholder } from '@/lib/placeholders';
 import CartIcon from '@/components/icons/cart';
+import { useRouter } from 'next/router';
+import { Routes } from '@/config/routes';
+import Link from 'next/link';
 
 type HeliumProps = {
   product: any;
@@ -14,7 +17,9 @@ type HeliumProps = {
 
 const Helium: React.FC<HeliumProps> = ({ product, className }) => {
   const { t } = useTranslation('common');
-  const { name, image, unit, quantity, min_price, max_price, product_type } =
+  const router = useRouter();
+
+  const { name, slug, image, unit, quantity, min_price, max_price, product_type } =
     product ?? {};
   const { price, basePrice, discount } = usePrice({
     amount: product.sale_price ? product.sale_price : product.price!,
@@ -29,8 +34,13 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
 
   const { openModal } = useModalAction();
 
-  function handleProductQuickView() {
-    return openModal('PRODUCT_DETAILS', product.slug);
+  // function handleProductQuickView() {
+  //   return openModal('PRODUCT_DETAILS', product.slug);
+  // }
+
+
+  const navigate = (path: string) => {
+    router.push(path);
   }
 
   return (
@@ -40,8 +50,9 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
         className
       )}
     >
-      <div
-        onClick={handleProductQuickView}
+      <Link
+        href={Routes.product(slug)}
+        // onClick={() => navigate(Routes.product(slug))}
         className="relative flex h-48 w-auto items-center justify-center sm:h-64"
         role="button"
       >
@@ -58,17 +69,17 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             {discount}
           </div>
         )}
-      </div>
+      </Link>
       {/* End of product image */}
 
       <header className="relative p-3 md:p-5 md:py-6">
-        <h3
-          onClick={handleProductQuickView}
+        <Link
+          href={Routes.product(slug)}
           role="button"
           className="mb-2 truncate text-sm font-semibold text-heading"
         >
           {name}
-        </h3>
+        </Link>
         <p className="text-xs text-muted">{unit}</p>
         {/* End of product info */}
 
@@ -86,13 +97,13 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
               </div>
 
               {Number(quantity) > 0 && (
-                <button
-                  onClick={handleProductQuickView}
+                <Link
+                  href={Routes.product(slug)}
                   className="order-5 flex items-center justify-center rounded-full border-2 border-border-100 bg-light px-3 py-2 text-sm font-semibold text-accent transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 sm:order-4 sm:justify-start sm:px-4"
                 >
                   <CartIcon className="h-4 w-4 ltr:mr-2 rtl:ml-2" />
                   <span>{t('text-cart')}</span>
-                </button>
+                </Link>
               )}
             </>
           ) : (
