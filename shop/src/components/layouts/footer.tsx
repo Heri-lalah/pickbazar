@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="flex w-full flex-col border-gray-800 bg-white px-5 md:px-10 lg:border-b-8 lg:px-[50px] xl:px-16">
       {/* Top */}
 
-      <div className="grid w-full grid-cols-5 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-5 xl:grid-cols-7 2xl:grid-cols-7">
+      <div className="grid w-full grid-cols-3 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-5 xl:grid-cols-7 2xl:grid-cols-7">
         {
           siteSettings.footer.time_slot.day.map((day) => (
             <div key={day} className="border-2 flex flex-col text-center">
