@@ -2,7 +2,7 @@ import { Routes } from '@/config/routes';
 import { PaymentGateway } from '@/types';
 
 export const siteSettings = {
-  name: 'PickBazar',
+  name: 'SWITH GAMING',
   description: '',
   logo: {
     url: '/logo.svg',
@@ -103,12 +103,17 @@ export const siteSettings = {
   },
   footer: {
     copyright: {
-      name: 'RedQ, Inc',
+      name: 'SWITCH GAMING',
       href: 'https://redq.io/',
     },
-    address: '2429 River Drive, Suite 35 Cottonhall, CA 2296 United Kingdom',
-    email: 'dummy@dummy.com',
-    phone: '+1 256-698-0694',
+    editedBy : {
+      text :'Site édité par la société',
+      name : 'CLICK INC',
+      href: '/',
+    },
+    address: '26 Rue des Arbres 25400 Audincourt France',
+    email: 'contact@switch-gaming.com',
+    phone: '09 83 52 33 55',
     time_slot :
       {
         day : ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],

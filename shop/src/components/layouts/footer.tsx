@@ -4,6 +4,7 @@ import Link from '@/components/ui/link';
 import Logo from '@/components/ui/logo';
 import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
 import { CloseIcon } from '../icons/close-icon';
+import Email from 'next-auth/providers/email';
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -43,15 +44,36 @@ const Footer = () => {
             <Logo />
           </div>
 
-          <address className="mb-7 text-sm not-italic text-primary">
-            {t(siteSettings.footer.address)}
-          </address>
-          <span className="mb-1 text-sm text-primary">
-            {t(siteSettings.footer.email)}
-          </span>
-          <span className="text-sm text-primary">
-            {t(siteSettings.footer.phone)}
-          </span>
+          <ul className="space-y-2">
+            <li className='text-sm not-italic text-primary'>
+              <address className='not-italic'>
+                <span className='mr-1'>Adresse :</span>
+                {t(siteSettings.footer.address)}
+              </address>
+            </li>
+
+            <li className="text-sm text-primary">
+              <span className='mr-1'>E-mail :</span>
+              <Link className='text-blue-500' href={"mailto:" + siteSettings.footer.email}>
+                {t(siteSettings.footer.email)}
+              </Link>
+              <p className='m-0'>Réponse sous 48 heures</p>
+            </li>
+
+            <li className="text-sm text-primary">
+              <span className='mr-1'>Téléphone :</span>
+              <Link href={"tel:" + siteSettings.footer.phone} className='text-blue-500'>
+                {t(siteSettings.footer.phone)}
+              </Link>
+              <p className='m-0'>(Appel non surtaxé)</p>
+            </li>
+
+            <li className="text-sm text-primary">
+              <p>Horaire d'ouverture du lundi au samedi de 9h00 à 18h00</p>
+            </li>
+          </ul>
+
+
         </div>
 
         {siteSettings.footer.menus.map((menu, idx) => (
@@ -84,9 +106,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="mt-8 flex w-full flex-col items-center border-t border-gray-200 pt-8 pb-12 lg:mt-0 lg:flex-row lg:justify-between lg:border-t-0">
+      <div className="mt-4 flex w-full flex-col items-center border-t border-gray-200 pt-2 pb-2 lg:mt-0 lg:flex-row lg:justify-between lg:border-t-0">
         <span className="order-2 text-sm text-heading lg:order-1">
-          &copy; {t('text-copyright')} {new Date().getFullYear()}{' '}
+          {t('text-copyright')} &copy; {new Date().getFullYear()}{' '}
           <Link
             className="font-bold text-heading transition-colors hover:text-accent"
             href={siteSettings.footer.copyright.href}
@@ -94,9 +116,17 @@ const Footer = () => {
             {siteSettings.footer.copyright.name}.
           </Link>{' '}
           {t('text-rights-reserved')}
+          <span className='mx-1'>|</span>
+          {siteSettings.footer.editedBy.text}
+          <Link
+            className="ml-1 font-bold text-heading transition-colors hover:text-accent"
+            href={siteSettings.footer.editedBy.href}
+          >
+            {siteSettings.footer.editedBy.name}.
+          </Link>
         </span>
 
-        {siteSettings.footer.payment_methods && (
+        {/* {siteSettings.footer.payment_methods && (
           <div className="order-1 mb-5 flex items-center space-x-5 rtl:space-x-reverse lg:order-2 lg:mb-0">
             {siteSettings.footer.payment_methods.map((method, idx) => (
               <Link
@@ -104,12 +134,12 @@ const Footer = () => {
                 key={`${method.url}-${idx}`}
                 href={method.url}
               >
-                {/* eslint-disable */}
+
                 <img src={method.img} className="max-h-full max-w-full" />
               </Link>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
