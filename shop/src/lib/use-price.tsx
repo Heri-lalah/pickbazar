@@ -61,7 +61,7 @@ export default function usePrice(
   } = useSettings();
   const { amount, baseAmount, currencyCode } = {
     ...data,
-    currencyCode: currency ?? 'USD',
+    currencyCode: currency ?? 'EUR',
   };
   const { formation, fractions } = currencyOptions!;
 
