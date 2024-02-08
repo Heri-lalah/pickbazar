@@ -69,7 +69,7 @@ export default function usePrice(
   const value = useMemo(() => {
     if (typeof amount !== 'number' || !currencyCode) return '';
     const fractionalDigit = fractions ? fractions : 2;
-    let currentLocale = formation ? formation : 'en';
+    let currentLocale = formation ? formation : 'fr';
     // if (process.env.NEXT_PUBLIC_ENABLE_MULTI_LANG) {
     //   currentLocale = locale ? locale : 'en';
     // }
