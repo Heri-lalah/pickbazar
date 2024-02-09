@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="grid w-full grid-cols-3 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-8 xl:grid-cols-7 2xl:grid-cols-7">
           {
             siteSettings.footer.time_slot.day.map((day) => (
-              <div key={day} className="border-2 flex flex-col text-center">
+              <div key={day} className="border-2 h-28 flex flex-col text-center">
                 <h3 className="mt-3 mb-1 font-semibold text-primary">
                   {day}
                 </h3>
