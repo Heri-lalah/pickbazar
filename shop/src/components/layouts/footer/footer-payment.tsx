@@ -10,8 +10,9 @@ const FooterPayement = () => {
                 <p className='mb-1'>{t('text-security-certificate')}</p>
                 <div className='flex flex-wrap gap-x-2 gap-y-1'>
                     {
-                    siteSettings.securityPaymentCertificate.map((value) =>(
-                        <img className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                    siteSettings.securityPaymentCertificate.map((value, index) =>(
+                        //eslint-disable-next-line
+                        <img key={index} className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                     ))
                     }
                 </div>
@@ -22,8 +23,9 @@ const FooterPayement = () => {
                     <p className='mb-1'>{t('text-delivery-method')}</p>
                     <div className='flex flex-wrap gap-x-2 gap-y-1'>
                         {
-                        siteSettings.deliveryMethod.map((value) =>(
-                            <img className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                        siteSettings.deliveryMethod.map((value, index) =>(
+                            //eslint-disable-next-line
+                            <img key={index} className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                         ))
                         }
                     </div>
@@ -34,8 +36,9 @@ const FooterPayement = () => {
             <p className='mb-1'>{t('text-accepted-payment-method')}</p>
                 <div className='flex flex-wrap gap-x-2 gap-y-1'>
                     {
-                    siteSettings.paymentMethod.map((value) =>(
-                        <img className='h-6 md:h-8 lg:h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                    siteSettings.paymentMethod.map((value, index) =>(
+                        //eslint-disable-next-line
+                        <img key={index} className='h-6 md:h-8 lg:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                     ))
                     }
                 </div>

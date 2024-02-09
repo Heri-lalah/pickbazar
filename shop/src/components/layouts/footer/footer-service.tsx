@@ -2,7 +2,6 @@ import { siteSettings } from '@/config/site';
 import Image from 'next/image';
 
 export const FooterService = () => {
-
     return (
         <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-4 lg:my-8 lg:pt-3 lg:pb-5 gap-x-1 gap-y-5 lg:gap-2">
             {
@@ -12,7 +11,8 @@ export const FooterService = () => {
                     className='grid grid-cols-3'
                     >
                         <div className='self-center text-center'>
-                            <Image
+                            {/* eslint-disable-next-line */}
+                            <img
                             className='inline'
                             alt={item.alt}
                             src={item.imageUrl}
@@ -27,7 +27,6 @@ export const FooterService = () => {
                     </div>
                 ))
             }
-
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import Link from '@/components/ui/link';
 import Logo from '@/components/ui/logo';
-import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
+// import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
 import { CloseIcon } from '../icons/close-icon';
 import FooterPayement from './footer/footer-payment';
 import { siteSettings } from '@/config/site';
