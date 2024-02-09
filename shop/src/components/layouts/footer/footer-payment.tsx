@@ -11,7 +11,7 @@ const FooterPayement = () => {
                 <div className='flex flex-wrap gap-x-2 gap-y-1'>
                     {
                     siteSettings.securityPaymentCertificate.map((value) =>(
-                        <img className='h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                        <img className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                     ))
                     }
                 </div>
@@ -23,7 +23,7 @@ const FooterPayement = () => {
                     <div className='flex flex-wrap gap-x-2 gap-y-1'>
                         {
                         siteSettings.deliveryMethod.map((value) =>(
-                            <img className='h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                            <img className='h-8 md:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                         ))
                         }
                     </div>
@@ -35,7 +35,7 @@ const FooterPayement = () => {
                 <div className='flex flex-wrap gap-x-2 gap-y-1'>
                     {
                     siteSettings.paymentMethod.map((value) =>(
-                        <img className='h-10 rounded' src={value.imageUrl} alt={value.title}/>
+                        <img className='h-6 md:h-8 lg:h-10 rounded' src={value.imageUrl} alt={value.title}/>
                     ))
                     }
                 </div>
