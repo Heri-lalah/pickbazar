@@ -45,7 +45,10 @@
   "text-date": "Date",
   "text-order-date": "Date de commande",
   "text-order-details": "Détails de la commande",
-  "text-payment-method": "Mode de paiement",
+  "text-payement-method": "Moyens de paiement",
+  "text-accepted-payment-method": "Moyens de paiement acceptés",
+  "text-delivery-method" : "Modes de livraison",
+  "text-security-certificate": "Certificats de sécurité",
   "text-address": "Adresse",
   "text-addresses": "Adresses",
   "text-upload-highlight": "Télécharger une image",
@@ -490,6 +493,4 @@
   "placeholder-search-location": "Rechercher le formulaire de localisation ici",
   "text-location": "Emplacement",
   "email-send-successfully": "Email envoyé avec succès",
-  "text-payement-method": "Moyens de paiement",
-  "text-security-certificate": "Certificats de sécurité"
 }
