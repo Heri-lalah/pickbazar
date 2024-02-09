@@ -5,7 +5,8 @@ import SubscriptionWidget from '@/components/settings/subscribe-to-newsletter';
 import { CloseIcon } from '../icons/close-icon';
 import FooterPayement from './footer/footer-payment';
 import { siteSettings } from '@/config/site';
-import { FooterBottomSection } from './footer/footer-bottom-section';
+import { FooterService } from './footer/footer-service';
+import { CopyRight } from './footer/copy-right';
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -14,7 +15,12 @@ const Footer = () => {
       <div className="flex w-full flex-col bg-white px-5 md:px-10 lg:px-[50px] xl:px-16">
 
         {/* Top */}
-        <div className="grid w-full grid-cols-3 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-5 xl:grid-cols-7 2xl:grid-cols-7">
+
+        {/* Services */}
+        <FooterService/>
+
+        {/* Times slots */}
+        <div className="grid w-full grid-cols-3 pt-3 md:grid-cols-5 lg:pt-3 lg:pb-8 xl:grid-cols-7 2xl:grid-cols-7">
           {
             siteSettings.footer.time_slot.day.map((day) => (
               <div key={day} className="border-2 flex flex-col text-center">
@@ -110,12 +116,13 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom copyright */}
+        {/* Footer payement */}
+        <FooterPayement/>
 
+        {/* Bottom copyright */}
+        <CopyRight/>
       </div>
 
-      {/* Footer payement */}
-      <FooterBottomSection/>
     </>
   );
 };

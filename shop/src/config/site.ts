@@ -88,6 +88,32 @@ export const siteSettings = {
     },
 
   ],
+  services : [
+    {
+      title : 'Paiement sécurisé',
+      description : 'Par carte bancaire. Nous possedons un certificat SSL',
+      alt: 'card',
+      imageUrl : '/services/card.jpg'
+    },
+    {
+      title : 'Service Client',
+      description : 'Service client réactif disponible par téléphone ou e-mail',
+      alt: 'client-service',
+      imageUrl: '/services/client-service.jpg',
+    },
+    {
+      title : 'Retour facile',
+      description : '15 jours pour changer d\'avis tout simplement !',
+      alt: 'feedback',
+      imageUrl : '/services/security.jpg'
+    },
+    {
+      title : 'Livraison gratuite',
+      description : 'La livraison vous est offerte à partir de 40€ d\'achat !',
+      alt :'livraison',
+      imageUrl : '/services/livraison.jpg'
+    },
+  ],
   authorizedLinks: [
     { href: Routes.profile, label: 'auth-menu-profile' },
     { href: Routes.orders, label: 'auth-menu-my-orders' },

@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 export const CopyRight = () => {
     const {t} = useTranslation();
     return (
-        <div className="flex w-full flex-col px-5 md:px-10 lg:px-[50px] xl:px-16">
+        <div className="flex w-full flex-col">
             <div className="my-1 flex w-full flex-col items-center p-0.5 lg:mt-0 lg:flex-row lg:justify-between lg:border-t-0">
             <span className="order-2 text-sm text-heading lg:order-1">
                 {t('text-copyright')} &copy; {new Date().getFullYear()}{' '}
