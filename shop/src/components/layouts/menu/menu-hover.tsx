@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function MenuHover(){
   return (
@@ -7,6 +8,13 @@ export default function MenuHover(){
       <Playstation/>
       <Nintendo/>
       <Xbox/>
+
+      <Link
+        href=""
+        className="flex items-center font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+      >
+        FUNKO POP & Figurine
+      </Link>
     </>
   )
 }
@@ -46,7 +54,9 @@ function Playstation() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <a href="/">Playstation</a>
+            <Link
+            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            href="">Playstation</Link>
             <motion.div
               // style={subMenu}
               className="absolute p-4 rounded bg-light"
@@ -55,11 +65,11 @@ function Playstation() {
               variants={subMenuAnimate}
             >
               <div className="absolute top-0 right-0 left-0 bottom-0 shadow-350" />
-              <div className="sub-menu-container">
+              <div className="flex flex-col">
                 {
                   [5,4,3,2,1].map((item, index) => (
                     <>
-                      <div className="mb-1">Playstation {item}</div>
+                      <Link href="" className="mb-1">Playstation {item}</Link>
                     </>
                   ))
                 }
@@ -104,7 +114,9 @@ function Nintendo() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <a href="/">Nintendo</a>
+            <Link
+            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            href="">Nintendo</Link>
             <motion.div
               // style={subMenu}
               className="absolute p-4 rounded bg-light"
@@ -113,11 +125,11 @@ function Nintendo() {
               variants={subMenuAnimate}
             >
               <div className="absolute top-0 right-0 left-0 bottom-0 shadow-350" />
-              <div className="sub-menu-container">
+              <div className="flex flex-col">
                 {
                   ["Nintendo Switch", "Nintendo 3DS", "Nintendo DS", "Gamecube"].map((item, index) => (
                     <>
-                      <div className="mb-1">{item}</div>
+                      <Link href="" className="mb-1">{item}</Link>
                     </>
                   ))
                 }
@@ -162,7 +174,9 @@ function Xbox() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <a href="/">Xbox</a>
+            <Link
+            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            href="">Xbox</Link>
             <motion.div
               // style={subMenu}
               className="absolute p-4 rounded bg-light"
@@ -171,11 +185,11 @@ function Xbox() {
               variants={subMenuAnimate}
             >
               <div className="absolute top-0 right-0 left-0 bottom-0 shadow-350" />
-              <div className="sub-menu-container">
+              <div className="flex flex-col">
                 {
                   ["Xbox Séries SIX", "Xbox One", "Xbox 360"].map((item, index) => (
                     <>
-                      <div className="mb-1">{item}</div>
+                      <Link href="" className="mb-1">{item}</Link>
                     </>
                   ))
                 }

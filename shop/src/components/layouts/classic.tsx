@@ -9,6 +9,7 @@ import { siteSettings } from '@/config/site';
 import Image from 'next/image';
 
 export default function ClassicLayout({ variables }: HomePageProps) {
+  console.log(variables.categories);
   return (
     <>
       {/* <Banner layout="classic" variables={variables.types} /> */}
