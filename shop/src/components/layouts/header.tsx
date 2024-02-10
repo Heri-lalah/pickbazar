@@ -89,6 +89,7 @@ const Header = ({ layout }: { layout?: string }) => {
             <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
               <GroupsDropdownMenu />
             </div>
+
             {
               settings?.useGoogleMap && (
                 <div className={cn(
@@ -99,6 +100,7 @@ const Header = ({ layout }: { layout?: string }) => {
                   //   'lg:flex': !isHomePage,
                   // }
                 )}>
+
                   <Button
                     variant="custom"
                     className="!flex items-center gap-2 px-0 lg:pl-5 text-sm md:text-base !font-normal max-w-full focus:!shadow-none focus:!ring-0 before:absolute before:left-0 before:w-[1px] before:h-8 lg:before:bg-[#E5E7EB] before:inset-y-0 before:my-auto"
@@ -129,7 +131,7 @@ const Header = ({ layout }: { layout?: string }) => {
 
           {isHomePage ? (
             <>
-              {(show || layout === 'modern') && (
+              {(show || layout === 'standard' || layout === 'default') && (
                 <div className="mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12">
                   <Search label={t('text-search-label')} variant="minimal" />
                 </div>
