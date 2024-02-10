@@ -43,7 +43,6 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
         <div className="flex w-full items-center lg:w-auto">
           {/* <Logo className="mx-auto lg:mx-0" /> */}
           <Logo className={`${!isMultilangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0'}`} />
-
           {isMultilangEnable ? (
             <div className="lg:hidden ltr:ml-auto rtl:mr-auto">
               <LanguageSwitcher />

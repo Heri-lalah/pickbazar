@@ -85,7 +85,7 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
                       {banner?.description}
                     </p>
                     <div className="w-full max-w-3xl" ref={intersectionRef}>
-                      <Search label="search" />
+                      {/* <Search label="search" /> */}
                     </div>
                   </div>
                 </div>

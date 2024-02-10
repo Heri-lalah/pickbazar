@@ -68,8 +68,8 @@ const Header = ({ layout }: { layout?: string }) => {
           className={cn(
             ' flex w-full transform-gpu items-center justify-between bg-light transition-transform duration-300 lg:h-22 lg:px-4 xl:px-8',
             {
-              'lg:bg-transparent lg:absolute lg:border-0 lg:shadow-none': isFlattenHeader,
-              'lg:!bg-light': openDropdown,
+              'lg:bg-white lg:absolute lg:border-0 lg:shadow-none': isFlattenHeader,
+              'lg:!bg-white': openDropdown,
             }
           )}
         >

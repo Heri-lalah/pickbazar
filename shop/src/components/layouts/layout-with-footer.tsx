@@ -19,7 +19,9 @@ const SiteLayoutWithFooter = ({ children }: { children?: React.ReactNode }) => {
       ) : (
         <Header layout={layout} />
       )}
+
       {children}
+
       <MobileNavigation />
       <Footer />
     </div>
