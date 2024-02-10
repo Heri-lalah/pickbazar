@@ -1,6 +1,6 @@
 import { Routes } from '@/config/routes';
 import { PaymentGateway } from '@/types';
-import bannerImage from '@/assets/Images/banner.png';
+import bannerImage from '../assets/Images/banner.png';
 export const siteSettings = {
   name: 'SWITH GAMING',
   description: '',

@@ -5,11 +5,19 @@ import { Element } from 'react-scroll';
 import FilterBar from './filter-bar';
 import ProductGridHome from '@/components/products/grids/home';
 import type { HomePageProps } from '@/types';
+import { siteSettings } from '@/config/site';
+import Image from 'next/image';
 
 export default function ClassicLayout({ variables }: HomePageProps) {
   return (
     <>
-      <Banner layout="classic" variables={variables.types} />
+      {/* <Banner layout="classic" variables={variables.types} /> */}
+      <div className='lg:h-96 2xl:h-auto min-w-full overflow-hidden'>
+        <Image className='w-full'
+        src={siteSettings.bannerImage.url} width={500} height={500}
+        alt={siteSettings.bannerImage.title}
+        />
+      </div>
       <PromotionSliders variables={variables.types} />
       <FilterBar variables={variables.categories} />
       <Element

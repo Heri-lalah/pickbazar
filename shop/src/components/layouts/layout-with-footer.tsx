@@ -21,7 +21,6 @@ const SiteLayoutWithFooter = ({ children }: { children?: React.ReactNode }) => {
       )}
 
       {children}
-
       <MobileNavigation />
       <Footer />
     </div>

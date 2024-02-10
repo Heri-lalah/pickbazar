@@ -17,7 +17,7 @@ const offerSliderBreakpoints = {
     spaceBetween: 16,
   },
   1920: {
-    slidesPerView: 4,
+    slidesPerView: 3,
     spaceBetween: 24,
   },
 };
