@@ -17,6 +17,7 @@ import Button from '@/components/ui/button';
 import LocationBasedShopForm from '@/components/form/location-based-shop-form';
 import { useSettings } from '@/framework/settings';
 import { ArrowDownIcon } from '@/components/icons/arrow-down';
+import { SubHeader } from './sub-header';
 
 const Search = dynamic(() => import('@/components/ui/search/search'));
 const AuthorizedMenu = dynamic(() => import('./menu/authorized-menu'), {
@@ -45,113 +46,56 @@ const Header = ({ layout }: { layout?: string }) => {
     [show, isHomePage, layout]
   );
 
-  const [location] = useAtom(locationAtom);
-  const getLocation = location?.street_address ? location?.street_address : location?.formattedAddress
   const closeLocation = () => setOpenDropdown(false)
-  const { settings } = useSettings();
-  // console.log('settings', location)
 
   return (
-    <header
-      className={cn(
-        'site-header-with-search top-0 z-50 w-full lg:h-22',
-        {
-          '': isFlattenHeader,
-          'sticky lg:fixed': isHomePage,
-          'sticky shadow-sm border-b border-border-200': !isHomePage,
-        }
-      )}
-    >
-      <div className={cn('fixed inset-0 bg-black/50 -z-10 w-full h-[100vh]', openDropdown === true ? '' : 'hidden')} onClick={closeLocation}></div>
-      <div>
+      <header
+        className={cn(
+          'site-header-with-search top-0 flex flex-col',
+          {
+            // '': isFlattenHeader,
+            // 'sticky lg:fixed': isHomePage,
+            // 'sticky shadow-sm border-b border-border-200': !isHomePage,
+          }
+        )}
+      >
+        <div className={cn('fixed inset-0 bg-black/50 -z-10 w-full h-[100vh]', openDropdown === true ? '' : 'hidden')} onClick={closeLocation}></div>
+
         <div
           className={cn(
             ' flex w-full transform-gpu items-center justify-between bg-light transition-transform duration-300 lg:h-22 lg:px-4 xl:px-8',
             {
-              'lg:bg-white lg:absolute lg:border-0 lg:shadow-none': isFlattenHeader,
+              'lg:border-0 lg:shadow-none': isFlattenHeader,
               'lg:!bg-white': openDropdown,
             }
           )}
         >
+
+          {/* Logo && Drodpdown menu */}
           <div className="flex flex-col lg:flex-row w-full items-center lg:w-auto grow-0 shrink-0 basis-auto">
             <Logo
               className={cn('pt-2 pb-3', !isMultilangEnable ? 'lg:mx-0' : 'ltr:ml-0 rtl:mr-0')}
             />
 
-            {isMultilangEnable ? (
-              <div className="ltr:ml-auto rtl:mr-auto lg:hidden">
-                <LanguageSwitcher />
-              </div>
-            ) : (
-              ''
-            )}
-
             <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
               <GroupsDropdownMenu />
             </div>
-
-            {
-              settings?.useGoogleMap && (
-                <div className={cn(
-                  'lg:ml-8 relative border-t lg:border-none flex justify-center w-full lg:w-auto',
-                  isFlattenHeader || isHomePage && 'lg:hidden 2xl:flex',
-                  // {
-                  //   'lg:hidden xl:flex': !isFlattenHeader,
-                  //   'lg:flex': !isHomePage,
-                  // }
-                )}>
-
-                  <Button
-                    variant="custom"
-                    className="!flex items-center gap-2 px-0 lg:pl-5 text-sm md:text-base !font-normal max-w-full focus:!shadow-none focus:!ring-0 before:absolute before:left-0 before:w-[1px] before:h-8 lg:before:bg-[#E5E7EB] before:inset-y-0 before:my-auto"
-                    onClick={() => setOpenDropdown(!openDropdown)}
-                  >
-                    <span className="flex grow-0 shrink-0 basis-auto items-center gap-1 text-accent text-base">
-                      <MapPin className="w-4 h-4 " />
-                      <span>Find Locations :</span>
-                    </span>
-                    {
-                      getLocation ?
-                        <span className='pl-1 text-left truncate leading-normal'> {getLocation}</span> :
-                        <span className='pl-1 flex items-center gap-2 leading-normal'> Enter your address</span>
-                    }
-                    <ArrowDownIcon className={cn('mt-1 w-2.5 h-2.5 text-accent transition-all', openDropdown ? 'rotate-180' : '')} />
-                  </Button>
-                  <LocationBasedShopForm
-                    className={cn(
-                      "fixed top-[109px] lg:top-[82px] inset-x-0 mx-auto bg-white",
-                      openDropdown === true ? "" : "hidden"
-                    )}
-                    closeLocation={closeLocation}
-                  />
-                </div>
-              )
-            }
           </div>
 
-          {isHomePage ? (
-            <>
-              {(show || layout === 'standard' || layout === 'default') && (
-                <div className="mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12">
-                  <Search label={t('text-search-label')} variant="minimal" />
-                </div>
-              )}
+          {/* search section */}
+          {(show || layout === 'standard' || layout === 'default') && (
+            <div className="mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12">
+              <Search label={t('text-search-label')} variant="minimal" />
+            </div>
+          )}
+          {displayMobileHeaderSearch && (
+            <div className="absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden">
+              <Search label={t('text-search-label')} variant="minimal" />
+            </div>
+          )}
 
-              {displayMobileHeaderSearch && (
-                <div className="absolute top-0 block h-full w-full bg-light px-5 pt-1.5 ltr:left-0 rtl:right-0 md:pt-2 lg:hidden">
-                  <Search label={t('text-search-label')} variant="minimal" />
-                </div>
-              )}
-            </>
-          ) : null}
-          {/* <button
-          className="px-10 ltr:ml-auto rtl:mr-auto"
-          onClick={() => openModal('LOCATION_BASED_SHOP')}
-        >
-          Map
-        </button> */}
+          {/* join and button section */}
           <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse lg:flex 2xl:space-x-10">
-            <StaticMenu />
             <div className="flex items-center space-x-4 rtl:space-x-reverse">
               <a
                 href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
@@ -163,51 +107,13 @@ const Header = ({ layout }: { layout?: string }) => {
               </a>
               <li>{isAuthorize ? <AuthorizedMenu /> : <JoinButton />}</li>
             </div>
-            {isMultilangEnable ? (
-              <div className="ms-auto lg:me-5 xl:me-8 2xl:me-10 hidden flex-shrink-0 lg:block">
-                <LanguageSwitcher />
-              </div>
-            ) : (
-              ''
-            )}
           </ul>
         </div>
-        <div className={cn(
-          'w-full bg-light shadow-sm border-b border-t border-border-200',
-          isHomePage ? 'hidden lg:block' : 'hidden'
-        )}>
-          {
-            settings?.useGoogleMap && (
-              <div className={cn('lg:pl-8 relative border-t lg:border-none flex justify-center w-full lg:w-auto before:absolute before:w-[1px] lg:before:w-0 before:h-8 lg:before:bg-[#E5E7EB] before:inset-y-0 before:my-auto', isFlattenHeader ? 'hidden' : 'lg:flex 2xl:hidden')}>
-                <Button
-                  variant="custom"
-                  className="flex items-center gap-2 focus:!shadow-none focus:!ring-0"
-                  onClick={() => setOpenDropdown(!openDropdown)}
-                >
-                  <span className="flex items-center gap-1 text-accent text-base">
-                    <MapPin className="w-4 h-4 " />
-                    <span className='hidden md:block'>Find Locations :</span>
-                  </span>
-                  {
-                    getLocation ?
-                      <span className='pl-1 flex items-center gap-2'> {getLocation}</span> :
-                      <span className='pl-1 flex items-center gap-2'> Enter your address</span>
-                  }
-                  <ArrowDownIcon className={cn('mt-1 w-2.5 h-2.5 text-accent transition-all', openDropdown ? 'rotate-180' : '')} />
-                </Button>
-                <LocationBasedShopForm
-                  className={cn(
-                    "fixed top-14 md:top-[109px] lg:top-[128px] inset-x-0 mx-auto bg-white",
-                    openDropdown === true ? "" : "hidden"
-                  )}
-                  closeLocation={closeLocation}
-                />
-              </div>
-            )
-          }
+
+        <div className='bg-light hidden lg:block'>
+          <SubHeader/>
         </div>
-      </div>
-    </header>
+      </header>
   );
 };
 

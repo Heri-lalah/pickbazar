@@ -28,7 +28,7 @@ export default function HomeLayout({
       ) : (
         <Header layout={layout} />
       )}
-      <div className="min-h-screen lg:mt-16 lg:pt-4">
+      <div className="min-h-screen">
         {children}
       </div>
       {['default'].includes(layout) && <Footer/>}

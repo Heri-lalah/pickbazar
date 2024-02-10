@@ -3,10 +3,10 @@ import { Routes } from '@/config/routes';
 import { useTranslation } from 'next-i18next';
 
 const headerLinks = [
-  // { href: Routes.shops, icon: null, label: 'nav-menu-shops' },
-  // { href: Routes.coupons, icon: null, label: 'nav-menu-offer' },
-  // { href: Routes.help, label: 'nav-menu-faq' },
-  // { href: Routes.contactUs, label: 'nav-menu-contact' },
+  { href: Routes.shops, icon: null, label: 'text-menu-promotion' },
+  { href: Routes.coupons, icon: null, label: 'text-menu-preorder' },
+  { href: Routes.help, label: 'text-menu-accessories' },
+  { href: Routes.contactUs, label: 'nav-menu-contact' },
 ];
 
 const StaticMenu = () => {

@@ -502,5 +502,9 @@
   "text-payement-method": "Moyens de paiement",
   "text-accepted-payment-method": "Moyens de paiement acceptés",
   "text-delivery-method": "Modes de livraison",
-  "text-security-certificate": "Certificats de sécurité"
+  "text-security-certificate": "Certificats de sécurité",
+
+  "text-menu-promotion": "Promotions",
+  "text-menu-preorder": "Précommande",
+  "text-menu-accessories": "Accessoires"
 }
