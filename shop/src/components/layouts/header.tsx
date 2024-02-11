@@ -83,7 +83,7 @@ const Header = ({ layout }: { layout?: string }) => {
           </div>
 
           {/* search section */}
-          {(show || layout === 'standard' || layout === 'default') && (
+          {(show || layout === 'standard' || layout === 'default' || layout === 'classic') && (
             <div className="mx-auto hidden w-full overflow-hidden px-10 lg:block xl:w-11/12 2xl:w-10/12">
               <Search label={t('text-search-label')} variant="minimal" />
             </div>
