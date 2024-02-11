@@ -35,7 +35,7 @@ export default function ManagedDrawer() {
     >
       {view === 'cart' && <CartSidebarView />}
       {view === 'FILTER_VIEW' && <MobileCategoryMenu variables={data} />}
-      {view === 'MAIN_MENU_VIEW' && <MobileMainMenu />}
+      {/* {view === 'FILTER_VIEW' && <MobileCategoryMenu variables={data} />} */}
       {view === 'AUTH_MENU_VIEW' && <MobileAuthorizedMenu />}
       {view === 'SEARCH_FILTER' && (
         <SearchFilterView

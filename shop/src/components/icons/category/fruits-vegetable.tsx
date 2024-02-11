@@ -3,6 +3,8 @@ export const FruitsVegetable: React.FC<React.SVGAttributes<{}>> = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      width="20.347"
+      height="24.101"
       viewBox="0 0 20.347 24.101"
       fill="currentColor"
       {...props}

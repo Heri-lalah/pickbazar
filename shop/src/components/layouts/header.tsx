@@ -110,7 +110,7 @@ const Header = ({ layout }: { layout?: string }) => {
           </ul>
         </div>
 
-        <div className='bg-light hidden lg:block'>
+        <div className='bg-light hidden xl:flex'>
           <SubHeader/>
         </div>
       </header>

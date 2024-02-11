@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowDownIcon } from "@/components/icons/arrow-down";
+import { ArrowDownIconTriangle } from "@/components/icons/arrow-down-icon-triangle";
 
 export default function MenuHover(){
   return (
@@ -10,10 +13,11 @@ export default function MenuHover(){
       <Xbox/>
 
       <Link
-        href=""
-        className="flex items-center font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
-      >
-        FUNKO POP & Figurine
+      className="flex items-center justify-between gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+      href="">
+        <Image src={"/icons/funkopop.jpg" } alt={"funkopop"} width={25} height={25}/>
+        <div className='h-5 border-2 border-accent-500'></div>
+        <div>FUNKO POP & Figurine</div>
       </Link>
     </>
   )
@@ -55,11 +59,16 @@ function Playstation() {
             onHoverEnd={toggleHoverMenu}
           >
             <Link
-            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
-            href="">Playstation</Link>
+            className="font-normal flex items-center gap-1 text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            href="">
+              <Image src={"/icons/ps.jpg" } alt={"playstation"} width={25} height={25}/>
+              <div className='h-5 border-2 border-accent-500'></div>
+              <div>Playstation</div>
+              <ArrowDownIconTriangle className="ml-3"/>
+            </Link>
             <motion.div
               // style={subMenu}
-              className="absolute p-4 rounded bg-light"
+              className="absolute p-4 w-44 rounded bg-light"
               initial="exit"
               animate={isHoverPlaystation ? "enter" : "exit"}
               variants={subMenuAnimate}
@@ -114,9 +123,16 @@ function Nintendo() {
             onHoverStart={toggleHoverMenu}
             onHoverEnd={toggleHoverMenu}
           >
-            <Link
-            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
-            href="">Nintendo</Link>
+              <Link
+              className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+              href="">
+                <Image src={"/icons/nintendo.jpg" } alt={"nintendo"} width={25} height={25}/>
+                <div className='h-5 border-2 border-accent-500'></div>
+                <div className="flex justify-between items-center">
+                  <span>Nintendo</span>
+                  <ArrowDownIconTriangle className="ml-3"/>
+                </div>
+              </Link>
             <motion.div
               // style={subMenu}
               className="absolute p-4 rounded bg-light"
@@ -175,8 +191,13 @@ function Xbox() {
             onHoverEnd={toggleHoverMenu}
           >
             <Link
-            className="font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
-            href="">Xbox</Link>
+            className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            href="">
+              <Image src={"/icons/xbox.jpg" } alt={"xbox"} width={25} height={25}/>
+              <div className='h-5 border-2 border-accent-500'></div>
+              <div>Xbox</div>
+              <ArrowDownIconTriangle className="ml-3"/>
+            </Link>
             <motion.div
               // style={subMenu}
               className="absolute p-4 rounded bg-light"

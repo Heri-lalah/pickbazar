@@ -1,26 +1,28 @@
 import Link from '@/components/ui/link';
 import { Routes } from '@/config/routes';
 import { useTranslation } from 'next-i18next';
-import GroupsDropdownMenu from './groups-menu';
+import { Promotion } from '@/components/icons/category';
+import Image from 'next/image';
 
 const headerLinks = [
-  { href: Routes.shops, icon: null, label: 'text-menu-promotion' },
-  { href: Routes.coupons, icon: null, label: 'text-menu-preorder' },
-  { href: Routes.help, label: 'text-menu-accessories' },
+  { href: Routes.shops, imageUrl: '/icons/promotion.jpg', label: 'text-menu-promotion' },
+  { href: Routes.coupons, imageUrl: '/icons/precommande.jpg', label: 'text-menu-preorder' },
+  { href: Routes.help, imageUrl:'/icons/accessoires.jpg', label:  'text-menu-accessories' },
 ];
 
 const StaticMenu = () => {
   const { t } = useTranslation('common');
-
+  console.log(Promotion)
   return (
     <>
-      {headerLinks.map(({ href, label, icon }) => (
+      {headerLinks.map(({ href, label, imageUrl }) => (
         <li key={`${href}${label}`}>
           <Link
             href={href}
-            className="flex items-center font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
+            className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
           >
-            {icon && <span className="ltr:mr-2 rtl:ml-2">{icon}</span>}
+            <Image src={imageUrl} alt={label} width={25} height={25}/>
+            <div className='h-5 border-2 border-accent-500'></div>
             {t(label)}
           </Link>
         </li>
