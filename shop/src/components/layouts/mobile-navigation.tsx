@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { NavbarIcon } from '@/components/icons/navbar-icon';
@@ -11,6 +12,7 @@ import { useAtom } from 'jotai';
 import { drawerAtom } from '@/store/drawer-atom';
 import { authorizationAtom } from '@/store/authorization-atom';
 import { useIsRTL } from '@/lib/locals';
+import { useEffect, useState } from 'react';
 
 export default function MobileNavigation({
   children,
@@ -32,17 +34,19 @@ export default function MobileNavigation({
     return openModal('LOGIN_VIEW');
   }
 
+
   return (
     <div className="visible h-12 md:h-14 lg:hidden">
       <nav className="fixed bottom-0 z-10 flex h-12 w-full justify-between bg-light py-1.5 px-2 shadow-400 ltr:left-0 rtl:right-0 md:h-14">
-        <motion.button
+        {/* <motion.button
           whileTap={{ scale: 0.88 }}
           onClick={() => handleSidebar('FILTER_VIEW')}
           className="flex h-full items-center justify-center p-2 focus:text-accent focus:outline-0"
         >
           <span className="sr-only">{t('text-burger-menu')}</span>
           <NavbarIcon className={`${isRTL && 'rotate-180 transform'}`} />
-        </motion.button>
+        </motion.button> */}
+
 
         {children}
 

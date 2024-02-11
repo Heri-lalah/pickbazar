@@ -1,7 +1,6 @@
 import Link from '@/components/ui/link';
 import { Routes } from '@/config/routes';
 import { useTranslation } from 'next-i18next';
-import { Promotion } from '@/components/icons/category';
 import Image from 'next/image';
 
 const headerLinks = [
@@ -12,7 +11,6 @@ const headerLinks = [
 
 const StaticMenu = () => {
   const { t } = useTranslation('common');
-  console.log(Promotion)
   return (
     <>
       {headerLinks.map(({ href, label, imageUrl }) => (
