@@ -1,6 +1,6 @@
 import type { NextPageWithLayout } from '@/types';
 import type { InferGetStaticPropsType } from 'next';
-import { useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { scroller } from 'react-scroll';
@@ -9,6 +9,7 @@ import Seo from '@/components/seo/seo';
 import { useWindowSize } from '@/lib/use-window-size';
 import { getStaticPaths, getStaticProps } from '@/framework/home-pages.ssr';
 import { useType } from '@/framework/type';
+import Swiper from 'swiper';
 
 export { getStaticPaths, getStaticProps };
 
@@ -46,13 +47,23 @@ const Home: NextPageWithLayout<
     }
   }, [query.text, query.category]);
 
-  const Component = MAP_LAYOUT_TO_GROUP[layout];
+  // disable error loading dom
+  const [domLoaded, setDomLoaded] = useState(false);
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
+  const Component = MAP_LAYOUT_TO_GROUP['classic'];
   return (
     <>
-      <Seo title={type?.name} url={type?.slug} images={type?.banners} />
-      <Component variables={variables} />
-      {!['compact', 'minimal'].includes(layout) && width > 1023 && (
-        <CartCounterButton />
+      {domLoaded && (
+        <div>
+          <Seo title={type?.name} url={type?.slug} images={type?.banners} />
+          <Component variables={variables} />
+          {!['compact', 'minimal'].includes(layout) && width > 1023 && (
+            <CartCounterButton />
+          )}
+        </div>
       )}
     </>
   );

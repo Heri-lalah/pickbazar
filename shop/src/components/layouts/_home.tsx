@@ -21,13 +21,10 @@ export default function HomeLayout({
   const [, setDisplayMobileHeaderSearch] = useAtom(
     displayMobileHeaderSearchAtom
   );
+
   return (
     <div className="flex min-h-screen flex-col bg-gray-100 transition-colors duration-150">
-      {['minimal', 'compact'].includes(layout) ? (
-        <HeaderMinimal layout={layout} />
-      ) : (
-        <Header layout={layout} />
-      )}
+      <Header layout={"classic"} />
       <div className="min-h-screen">
         {children}
       </div>
