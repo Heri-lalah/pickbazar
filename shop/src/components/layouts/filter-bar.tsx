@@ -18,7 +18,7 @@ export default function FilterBar({
   return (
     <div
       className={classNames(
-        'sticky top-[0] lg:top-[133px] z-10 flex h-14 items-center justify-between border-t border-b border-border-200 bg-light py-3 px-5 md:h-16 lg:px-7 xl:hidden',
+        'sticky top-[0] lg:top-[0] z-10 flex h-14 items-center justify-between border-t border-b border-border-200 bg-light py-3 px-5 md:h-16 lg:px-7 xl:hidden',
         className
       )}
     >
