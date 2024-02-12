@@ -13,6 +13,7 @@ export default function ClassicLayout({ variables }: HomePageProps) {
   return (
     <>
       {/* <Banner layout="classic" variables={variables.types} /> */}
+      {/*add px-6 lg:p-0 to set padding in mobile view*/}
       <div className='lg:h-96 2xl:h-auto min-w-full overflow-hidden'>
         <Image className='w-full'
         src={siteSettings.bannerImage.url} width={500} height={500}
