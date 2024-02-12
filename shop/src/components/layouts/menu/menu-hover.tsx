@@ -16,7 +16,7 @@ export default function MenuHover(){
       className="flex items-center justify-between gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
       href="">
         <Image src={"/icons/funkopop.jpg" } alt={"funkopop"} width={25} height={25}/>
-        <div className='h-5 border-2 border-accent-500'></div>
+        <div className='h-5 border-l-2 border-primary'></div>
         <div>FUNKO POP & Figurine</div>
       </Link>
     </>
@@ -62,7 +62,7 @@ function Playstation() {
             className="font-normal flex items-center gap-1 text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
             href="">
               <Image src={"/icons/ps.jpg" } alt={"playstation"} width={25} height={25}/>
-              <div className='h-5 border-2 border-accent-500'></div>
+              <div className='h-5 border-l-2 border-primary'></div>
               <div>Playstation</div>
               <ArrowDownIconTriangle className="ml-3"/>
             </Link>
@@ -127,7 +127,7 @@ function Nintendo() {
               className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
               href="">
                 <Image src={"/icons/nintendo.jpg" } alt={"nintendo"} width={25} height={25}/>
-                <div className='h-5 border-2 border-accent-500'></div>
+                <div className='h-5 border-l-2 border-primary'></div>
                 <div className="flex justify-between items-center">
                   <span>Nintendo</span>
                   <ArrowDownIconTriangle className="ml-3"/>
@@ -194,7 +194,7 @@ function Xbox() {
             className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
             href="">
               <Image src={"/icons/xbox.jpg" } alt={"xbox"} width={25} height={25}/>
-              <div className='h-5 border-2 border-accent-500'></div>
+              <div className='h-5 border-l-2 border-primary'></div>
               <div>Xbox</div>
               <ArrowDownIconTriangle className="ml-3"/>
             </Link>

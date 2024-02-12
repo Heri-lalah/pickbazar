@@ -20,7 +20,7 @@ const StaticMenu = () => {
             className="flex items-center gap-1 font-normal text-heading no-underline transition duration-200 hover:text-accent focus:text-accent"
           >
             <Image src={imageUrl} alt={label} width={25} height={25}/>
-            <div className='h-5 border-2 border-accent-500'></div>
+            <div className='h-5 border-l-2 border-primary'></div>
             {t(label)}
           </Link>
         </li>
