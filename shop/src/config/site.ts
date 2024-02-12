@@ -17,6 +17,7 @@ export const siteSettings = {
     title : 'banner-image',
     url : bannerImage
   },
+  layoutType : 'classic',
   product: {
     placeholderImage: '/product-placeholder.svg',
     cardMaps: {
