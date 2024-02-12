@@ -60,7 +60,7 @@ const Home: NextPageWithLayout<
         <div>
           <Seo title={type?.name} url={type?.slug} images={type?.banners} />
           <Component variables={variables} />
-          {!['compact', 'minimal'].includes(layout) && width > 1023 && (
+          {width > 1023 && (
             <CartCounterButton />
           )}
         </div>
